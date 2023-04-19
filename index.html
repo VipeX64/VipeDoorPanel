@@ -62,6 +62,12 @@
 </head>
 
 <body>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+    var socket = io();
+  </script>
+
   <!-- <ul id="messages"></ul>
   <form id="form" action="">
     <input id="input" autocomplete="off" /><button>Send</button>
@@ -80,12 +86,8 @@
     <button id="Buzz">Buzzer</button>
   </div>
 
- 
-  <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
 
   <script>
-    var socket = io();
-
     // var messages = document.getElementById('messages');
     // var form = document.getElementById('form');
     // var input = document.getElementById('input');
