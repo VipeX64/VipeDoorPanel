@@ -22,7 +22,7 @@
 const app = require('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3001;
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
