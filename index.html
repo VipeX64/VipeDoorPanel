@@ -62,12 +62,12 @@
 </head>
 
 <body>
-  <script src="/socket.io/socket.io.js"></script>
+  <!-- <script src="/socket.io/socket.io.js"></script>
 
   <script>
     var socket = io('/');
 
-  </script>
+  </script> -->
 
   <!-- <ul id="messages"></ul>
   <form id="form" action="">
@@ -111,16 +111,29 @@
     let sendMessage = document.getElementById("SendMessage");
     sendMessage.addEventListener("click", () => {
       let input = document.getElementById("MessageToBeSent").value;
-      socket.emit('send message', input);
+      let data = { test: "123" };
+      fetch("https://vipedoorpanel.onrender.com/abc", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
+      // socket.emit('send message', input); safsaf asfsa
     });
 
-    socket.on('send message', function (msg) {
 
-      let viewPanel = document.getElementById("ViewMessage");
-      viewPanel.innerText = msg;
-      console.log(msg);
+    // socket.on('send message', function (msg) {
 
-    });
+    //   let viewPanel = document.getElementById("ViewMessage");
+    //   viewPanel.innerText = msg;
+    //   console.log(msg);
+
+    // });
   </script>
 </body>
 
