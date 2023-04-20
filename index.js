@@ -26,7 +26,6 @@ const port = process.env.PORT || 3001;
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
-
 io.on('connection', (socket) => {
   console.log('user connected');
   socket.on('send message', msg => {
