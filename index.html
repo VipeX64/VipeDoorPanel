@@ -118,7 +118,7 @@
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      }).then((response) => response.json()).then((data) => {
+      }).then((response) => response.send()).then((data) => {
           console.log(data);
           console.log("yy");
         });
